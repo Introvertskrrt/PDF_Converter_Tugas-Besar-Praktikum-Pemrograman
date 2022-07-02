@@ -49,8 +49,18 @@ if __name__ == "__main__":
                 os.system('cls')
                 continue
 
-        except:
+        except ValueError:
             print(Fore.RED+"An Error Occured! Please input a number!")
+            time.sleep(2)
+            os.system('cls')
+            continue
+
+        except FileNotFoundError:
+            os.system('cls')
+            continue
+
+        except:
+            print(Fore.RED+"Unknown Error Occured!"+Fore.WHITE)
             time.sleep(2)
             os.system('cls')
             continue

@@ -85,7 +85,7 @@ def doctopdf_convert():
         print(Fore.RED+'There are no files to convert'+Fore.WHITE)
         exit()
 		
-    print(Fore.BLUE+'Converting to PDF... \n'+Fore.WHITE)
+    print(Fore.BLUE+'Converting file to PDF... \n'+Fore.WHITE)
 
     # Opens each file with Microsoft Word and saves as a PDF
     try:

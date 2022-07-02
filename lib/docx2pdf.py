@@ -3,6 +3,7 @@ import shutil
 import tkinter
 import colorama
 import time
+import subprocess
 
 from colorama import Fore
 from tkinter import filedialog
@@ -121,7 +122,11 @@ def doctopdf_convert():
     except Exception as e:
         print(e)
 
+    # Program Finished
     print('\nConversion Finished!')
     time.sleep(2)
     remove_docx(directory)
+    converted_dir = directory+"\\Converted to PDF"
+    subprocess.Popen(f'explorer "{converted_dir}"')
+
     os.system('cls')

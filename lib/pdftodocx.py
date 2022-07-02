@@ -7,7 +7,8 @@ import subprocess
 from colorama import Fore
 from tkinter import filedialog
 from pdf2docx import Converter
-
+root = tkinter.Tk()
+root.withdraw()
 colorama.init()
 
 def n_files(directory):
@@ -27,8 +28,6 @@ def create_folder(directory): # Create a folder to put the converted files
 
 # File Selector using tkinter GUI
 def selectpdfFile(directory): # Select and Copy file to directory
-    root = tkinter.Tk()
-    root.withdraw()
     filepath = filedialog.askopenfilename(initialdir="Documents",
                                           title="Select File",
                                           filetypes= (("pdf files","*.pdf"), # File Selection

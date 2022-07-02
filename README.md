@@ -17,6 +17,7 @@
 - subprocess
 - sys
 - win32com
+- pdf2docx
 
 **To install Library**
 - pip install "library"

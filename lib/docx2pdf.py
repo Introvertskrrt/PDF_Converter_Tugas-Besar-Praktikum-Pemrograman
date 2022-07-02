@@ -56,7 +56,7 @@ def selectdocxFile(directory): # Select and Copy file to directory
     filepath = filedialog.askopenfilename(initialdir="Documents",
                                           title="Select File",
                                           filetypes= (("docx files","*.docx"),
-                                          ("all files","*.*")))
+                                          ("document files","*.doc*")))
     file = filepath
 
     file_dir = directory

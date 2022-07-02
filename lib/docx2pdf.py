@@ -8,10 +8,8 @@ import subprocess
 from colorama import Fore
 from tkinter import filedialog
 from sys import platform
-
 root = tkinter.Tk()
 root.withdraw()
-
 colorama.init()
 
 # Counts the number of files in the directory that can be converted
@@ -61,7 +59,6 @@ def selectdocxFile(directory): # Select and Copy file to directory
     file = filepath
     file_dir = directory
     shutil.copy(file, file_dir) # copy selected file to directory
-    root.destroy()
 
 def remove_docx(directory): # Remove docx file in directory after conversion
     files_in_directory = os.listdir(directory)

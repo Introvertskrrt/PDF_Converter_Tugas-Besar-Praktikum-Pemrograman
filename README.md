@@ -1,6 +1,6 @@
 # PDF Converter Tugas Besar Praktikum Pemrograman
 
-### ~Kelompok
+### ~Developers
 - Rizky Ageng Nugroho
 - Hashbi Alhadi
 - SADDAM RIZKI SAEFUL PUTRANTO

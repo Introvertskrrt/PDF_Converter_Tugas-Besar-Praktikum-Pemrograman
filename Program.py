@@ -5,6 +5,7 @@ import colorama
 from colorama import Fore
 from lib.docx2pdf import *
 from lib.kelompok import *
+from lib.pdftodocx import *
 
 colorama.init()
 
@@ -27,10 +28,7 @@ if __name__ == "__main__":
                 doctopdf_convert()
 
             elif command == 2:
-                print("Fitur Belum Tersedia!")
-                time.sleep(2)
-                os.system('cls')
-                continue
+                pdftodocx_convert()
 
             elif command == 3:
                 os.system('cls')

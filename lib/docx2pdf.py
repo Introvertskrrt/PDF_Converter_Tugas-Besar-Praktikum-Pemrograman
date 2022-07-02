@@ -11,6 +11,7 @@ from sys import platform
 
 root = tkinter.Tk()
 root.withdraw()
+
 colorama.init()
 
 # Counts the number of files in the directory that can be converted
@@ -22,10 +23,10 @@ def n_files(directory):
             total += 1
     return total
 
-# Creates a new directory within current directory called Converted to PDF
+# Creates a new directory within current directory called Docx to PDF
 def createFolder(directory):
-    if not os.path.exists(directory + '/Converted to PDF'):
-        os.makedirs(directory + '/Converted to PDF')
+    if not os.path.exists(directory + '/Docx to PDF'):
+        os.makedirs(directory + '/Docx to PDF')
 
     else:
         pass
@@ -58,9 +59,9 @@ def selectdocxFile(directory): # Select and Copy file to directory
                                           filetypes= (("docx files","*.docx"), # File Selection
                                           ("document files","*.doc"), ("text files", "*.tmd")))
     file = filepath
-
     file_dir = directory
     shutil.copy(file, file_dir) # copy selected file to directory
+    root.destroy()
 
 def remove_docx(directory): # Remove docx file in directory after conversion
     files_in_directory = os.listdir(directory)
@@ -73,9 +74,6 @@ def remove_docx(directory): # Remove docx file in directory after conversion
 
 # Main Program !!!
 def doctopdf_convert():
-    print('For best results and quality, close Microsoft Word before proceeding')
-    input(Fore.GREEN+'\nPress enter to continue.'+Fore.WHITE)
-	
     directory = os.getcwd()
 
     selectdocxFile(directory)
@@ -108,13 +106,13 @@ def doctopdf_convert():
 
                 if is_tool('libreoffice'):
                     in_file = os.path.abspath(directory + '/' + file)
-                    new_file = os.path.abspath(directory + '/Converted to PDF')
+                    new_file = os.path.abspath(directory + '/Docx to PDF')
                     doc2pdf(in_file, ending, new_file)
 
                 if(is_tool('libreoffice') == False):
                     new_name = file.replace(ending,r".pdf")
                     in_file = os.path.abspath(directory + '\\' + file)
-                    new_file = os.path.abspath(directory + '\\Converted to PDF' + '\\' + new_name)
+                    new_file = os.path.abspath(directory + '\\Docx to PDF' + '\\' + new_name)
                     doc = word.Documents.Open(in_file)
                     print(new_name)
                     doc.SaveAs(new_file,FileFormat = 17)
@@ -126,7 +124,6 @@ def doctopdf_convert():
     print('\nConversion Finished!')
     time.sleep(2)
     remove_docx(directory)
-    converted_dir = directory+"\\Converted to PDF"
+    converted_dir = directory+"\\Docx to PDF"
     subprocess.Popen(f'explorer "{converted_dir}"')
-
     os.system('cls')

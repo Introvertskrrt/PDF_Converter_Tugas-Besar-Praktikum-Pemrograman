@@ -1,3 +1,7 @@
+import colorama
+from colorama import Fore
+colorama.init()
+
 def kelompok():
     print("Anggota Kelompok\n")
     print("Rizky Ageng Nugroho | 21104045")
@@ -6,3 +10,5 @@ def kelompok():
     print("Saddam Rizki Saeful Putranto | 21104056")
     print("Tri Agung Prayoga | 21104052")
     print("Ginanjar Pangestu | 21104055")
+
+    print("\nSource Code: "+Fore.BLUE+"https://github.com/RizkyNugroho666/PDF_Converter_Tugas-Besar-Praktikum-Pemrograman"+Fore.WHITE)

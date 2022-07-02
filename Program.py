@@ -18,6 +18,7 @@ def menu():
 
 # Main Program
 if __name__ == "__main__":
+    os.system('cls' if os.name == 'nt' else 'clear') # to prevent "colorama" font color bug
     while command != 4:
         menu()
         try:

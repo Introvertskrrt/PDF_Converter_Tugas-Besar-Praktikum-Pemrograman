@@ -55,8 +55,8 @@ def is_tool(name):
 def selectdocxFile(directory): # Select and Copy file to directory
     filepath = filedialog.askopenfilename(initialdir="Documents",
                                           title="Select File",
-                                          filetypes= (("docx files","*.docx"),
-                                          ("document files","*.doc*")))
+                                          filetypes= (("docx files","*.docx"), # File Selection
+                                          ("document files","*.doc"), ("text files", "*.tmd")))
     file = filepath
 
     file_dir = directory

@@ -17,8 +17,6 @@
 - subprocess
 - sys
 - win32com
-- pdfplumber
-- docx
 
 **To install Library**
 - pip install "library"

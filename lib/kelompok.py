@@ -3,7 +3,7 @@ from colorama import Fore
 colorama.init()
 
 def kelompok():
-    print("Anggota Kelompok\n")
+    print("Developers\n")
     print("Rizky Ageng Nugroho | 21104045")
     print("Hashbi Alhadi | 21104054")
     print("Asep Hudori | 21104064")

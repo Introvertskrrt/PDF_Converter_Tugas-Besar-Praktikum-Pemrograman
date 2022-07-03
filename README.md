@@ -29,9 +29,9 @@
 
 *Remove ""*
 
-### Download
+### ~Download
 - **Not Available** (still in development stage)
 
-### How to Use
+### ~How to Use
 **CMD**
 - python "Program.py"

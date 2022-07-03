@@ -1,14 +1,12 @@
 import os
 import shutil
 import colorama
-import tkinter
 import subprocess
 
 from colorama import Fore
 from tkinter import filedialog
 from pdf2docx import Converter
-root = tkinter.Tk()
-root.withdraw()
+
 colorama.init()
 
 def n_files(directory):
@@ -20,10 +18,13 @@ def n_files(directory):
     return total
 
 def create_folder(directory): # Create a folder to put the converted files
-    if not os.path.exists(directory + '/Pdf to Docx'):
-        os.makedirs(directory + '/Pdf to Docx')
+    try:
+        if not os.path.exists(directory + '/Output Folder/Pdf to Docx'):
+            os.makedirs(directory + '/Output Folder/Pdf to Docx')
 
-    else:
+        else:
+            pass
+    except:
         pass
 
 # File Selector using tkinter GUI
@@ -56,11 +57,12 @@ def pdftodocx_convert():
                 cv = Converter(pdf_file)
                 cv.convert(docx_file, start = 0, end=None)
                 cv.close()
-                shutil.move(docx_file, "Pdf to Docx\\")
+                shutil.move(docx_file, "Output Folder\\Pdf to Docx\\")
                 os.remove(pdf_file) # Remove docx file after conversion finished
         
-        converted_dir = directory+"\\Pdf to Docx"
+        converted_dir = directory+"\\Output Folder\\Pdf to Docx"
         subprocess.Popen(f'explorer "{converted_dir}"')
+        os.system('cls')
 
     except Exception as e:
         print(e)

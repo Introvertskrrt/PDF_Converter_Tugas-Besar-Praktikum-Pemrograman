@@ -10,6 +10,7 @@
 ### ~Requirements
 **Python**
 - Python 3.10.5 Version
+
 *Download Here:* https://www.python.org/downloads/
 
 **Library List**

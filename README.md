@@ -16,7 +16,7 @@
 - time
 - subprocess
 - sys
-- win32com
+- pywin | win32com
 - pdf2docx
 
 **To install Library**

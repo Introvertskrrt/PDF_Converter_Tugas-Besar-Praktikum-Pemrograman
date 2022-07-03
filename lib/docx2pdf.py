@@ -1,6 +1,5 @@
 import os
 import shutil
-import tkinter
 import colorama
 import time
 import subprocess
@@ -8,8 +7,7 @@ import subprocess
 from colorama import Fore
 from tkinter import filedialog
 from sys import platform
-root = tkinter.Tk()
-root.withdraw()
+
 colorama.init()
 
 # Counts the number of files in the directory that can be converted
@@ -23,12 +21,15 @@ def n_files(directory):
 
 # Creates a new directory within current directory called Docx to PDF
 def createFolder(directory):
-    if not os.path.exists(directory + '/Docx to PDF'):
-        os.makedirs(directory + '/Docx to PDF')
+    try:
+        if not os.path.exists(directory + 'Output Folder/Docx to PDF'):
+            os.makedirs(directory + '/Output Folder/Docx to PDF')
 
-    else:
+        else:
+            pass
+    except:
         pass
-
+    
 def doc2pdf(doc, ending, newdic): # Convert a file with .doc or .docx format to pdf
     cmd = f"lowriter --convert-to pdf:writer_pdf_Export '{doc}'" # CMD Command to convert file to PDF
     os.system(cmd)
@@ -103,13 +104,13 @@ def doctopdf_convert():
 
                 if is_tool('libreoffice'):
                     in_file = os.path.abspath(directory + '/' + file)
-                    new_file = os.path.abspath(directory + '/Docx to PDF')
+                    new_file = os.path.abspath(directory + 'Output Folder/Docx to PDF')
                     doc2pdf(in_file, ending, new_file)
 
                 if(is_tool('libreoffice') == False):
                     new_name = file.replace(ending,r".pdf")
                     in_file = os.path.abspath(directory + '\\' + file)
-                    new_file = os.path.abspath(directory + '\\Docx to PDF' + '\\' + new_name)
+                    new_file = os.path.abspath(directory + '\\Output Folder\\Docx to PDF' + '\\' + new_name)
                     doc = word.Documents.Open(in_file)
                     print(new_name)
                     doc.SaveAs(new_file,FileFormat = 17)
@@ -121,6 +122,6 @@ def doctopdf_convert():
     print('\nConversion Finished!')
     time.sleep(2)
     remove_docx(directory)
-    converted_dir = directory+"\\Docx to PDF"
+    converted_dir = directory+"\\Output Folder\\Docx to PDF"
     subprocess.Popen(f'explorer "{converted_dir}"')
     os.system('cls')

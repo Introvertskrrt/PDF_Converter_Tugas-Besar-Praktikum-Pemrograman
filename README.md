@@ -33,4 +33,5 @@
 - **Not Available** (still in development stage)
 
 ### How to Use
-- **Not Available**
+**CMD**
+- python "Program.py"

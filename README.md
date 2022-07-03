@@ -8,7 +8,11 @@
 - GINANJAR PANGESTU
 
 ### ~Requirements
-**All Library List**
+**Python**
+- Python 3.10.5 Version
+*Download Here:* https://www.python.org/downloads/
+
+**Library List**
 - os
 - shutil
 - tkinter
@@ -26,3 +30,6 @@
 
 ### Download
 - **Not Available** (still in development stage)
+
+### How to Use
+- **Not Available**

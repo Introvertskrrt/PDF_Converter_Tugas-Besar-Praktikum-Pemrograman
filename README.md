@@ -3,9 +3,9 @@
 ### ~Developers
 - Rizky Ageng Nugroho
 - Hashbi Alhadi
-- SADDAM RIZKI SAEFUL PUTRANTO
-- TRI AGUNG PRAYOGA
-- GINANJAR PANGESTU
+- Saddam Rizki Saeful Putranto
+- Tri Agung Prayoga
+- Ginanjar Pangestu
 
 ### ~Requirements
 **Python**

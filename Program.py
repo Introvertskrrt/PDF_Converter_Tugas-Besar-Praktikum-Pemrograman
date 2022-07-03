@@ -4,7 +4,7 @@ import colorama
 
 from colorama import Fore
 from lib.docx2pdf import *
-from lib.kelompok import *
+from lib.devs import *
 from lib.pdftodocx import *
 
 colorama.init()
@@ -14,7 +14,12 @@ command = 0
 
 # Menu
 def menu():
-    print(Fore.RED+"File to PDF Converter"+Fore.WHITE)
+    print(Fore.RED+"""
+░█▀█░█▀▄░█▀▀░░░█▀▀░█▀█░█▀█░█░█░█▀▀░█▀▄░▀█▀░█▀▀░█▀▄
+░█▀▀░█░█░█▀▀░░░█░░░█░█░█░█░▀▄▀░█▀▀░█▀▄░░█░░█▀▀░█▀▄
+░▀░░░▀▀░░▀░░░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀
+    """+Fore.WHITE)
+    print(Fore.CYAN+"Select Converter:"+Fore.WHITE)
     print("[1] Docx to PDF\n[2] PDF to Docx\n[3] Credits\n[4] Exit")
 
 # Main Program
@@ -32,9 +37,9 @@ if __name__ == "__main__":
 
             elif command == 3:
                 os.system('cls')
-                kelompok()
+                devs()
                 print("\n[0] Menu")
-                command = int(input(">> "))
+                command = int(input(Fore.GREEN+">> "+Fore.WHITE))
                 if command == 0:
                     os.system('cls')
                     continue
@@ -49,7 +54,7 @@ if __name__ == "__main__":
                 continue
 
         except ValueError:
-            print(Fore.RED+"An Error Occured! Please input a number!")
+            print(Fore.RED+"An Error Occured! Please input a number!"+Fore.WHITE)
             time.sleep(2)
             os.system('cls')
             continue
@@ -58,8 +63,5 @@ if __name__ == "__main__":
             os.system('cls')
             continue
 
-        except:
-            print(Fore.RED+"Unknown Error Occured!"+Fore.WHITE)
-            time.sleep(2)
-            os.system('cls')
-            continue
+        except Exception as e:
+            print(e)

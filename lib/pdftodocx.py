@@ -71,7 +71,7 @@ def pdftodocx_convert():
 
     docx = client.Dispatch('Word.Application')
     docx.visible = 0
-    print("Converting PDF to Docx...")
+    print(Fore.BLUE+"Converting PDF to Docx..."+Fore.WHITE)
 
     try:
         for file in os.listdir(directory):
@@ -92,7 +92,7 @@ def pdftodocx_convert():
         os.system('cls')
 
     # Program Finished
-    print(Fore.BLUE+"Conversion Success"+Fore.WHITE)
+    print(Fore.GREEN+"\nConversion Finished!"+Fore.WHITE)
     time.sleep(2)
     remove_pdf(directory)
     converted_dir = directory+"\\Output Folder\\Pdf to Docx"

@@ -115,13 +115,14 @@ def doctopdf_convert():
                     print(f"Converted File: {new_name}")
                     doc.SaveAs(new_file,FileFormat = 17)
                     doc.Close()
+                    
     except Exception as e:
         print(e)
         os.system('pause')
         os.system('cls')
 
     # Program Finished
-    print('\nConversion Finished!')
+    print(Fore.GREEN+'\nConversion Finished!'+Fore.WHITE)
     time.sleep(2)
     remove_docx(directory)
     converted_dir = directory+"\\Output Folder\\Docx to PDF"

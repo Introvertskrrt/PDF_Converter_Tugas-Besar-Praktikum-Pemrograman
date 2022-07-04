@@ -4,6 +4,7 @@ import colorama
 import time
 import subprocess
 
+from win32com import client # MOST IMPORTANT LIBRARY
 from colorama import Fore
 from tkinter import filedialog
 from sys import platform
@@ -86,7 +87,6 @@ def doctopdf_convert():
     # Opens each file with Microsoft Word and saves as a PDF
     try:
         if(is_tool('libreoffice') == False):
-            from win32com import client
             word = client.DispatchEx('Word.Application')
 
         for file in os.listdir(directory):

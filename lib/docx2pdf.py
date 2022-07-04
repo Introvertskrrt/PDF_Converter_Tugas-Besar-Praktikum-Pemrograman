@@ -30,7 +30,7 @@ def createFolder(directory):
     except:
         pass
     
-def doc2pdf(doc, ending, newdic): # Convert a file with .doc or .docx format to pdf
+def doc2pdf(doc, ending, newdic):
     cmd = f"lowriter --convert-to pdf:writer_pdf_Export '{doc}'" # CMD Command to convert file to PDF
     os.system(cmd)
     new_file = doc.replace(ending, r".pdf")
@@ -81,7 +81,7 @@ def doctopdf_convert():
         print(Fore.RED+'There are no files to convert'+Fore.WHITE)
         exit()
 		
-    print(Fore.BLUE+'Converting file to PDF... \n'+Fore.WHITE)
+    print(Fore.BLUE+'Converting Docx to PDF... \n'+Fore.WHITE)
 
     # Opens each file with Microsoft Word and saves as a PDF
     try:
@@ -112,7 +112,7 @@ def doctopdf_convert():
                     in_file = os.path.abspath(directory + '\\' + file)
                     new_file = os.path.abspath(directory + '\\Output Folder\\Docx to PDF' + '\\' + new_name)
                     doc = word.Documents.Open(in_file)
-                    print(new_name)
+                    print(f"Converted File: {new_name}")
                     doc.SaveAs(new_file,FileFormat = 17)
                     doc.Close()
     except Exception as e:

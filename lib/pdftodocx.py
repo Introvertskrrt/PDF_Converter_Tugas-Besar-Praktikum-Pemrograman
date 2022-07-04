@@ -7,11 +7,10 @@ import colorama
 from colorama import Fore
 from tkinter import filedialog
 from win32com import client # MOST IMPORTANT LIBRARY
-from sys import platform
 
 colorama.init()
 
-def n_files(directory):
+def n_files(directory): # Count .pdf files in the directory
     total = 0
 
     for file in os.listdir(directory):
@@ -19,15 +18,15 @@ def n_files(directory):
             total += 1
     return total
 
-def createFolder(directory):
+def createFolder(directory): # Create Output Folder
     try:
         if not os.path.exists(directory + 'Output Folder/Pdf to Docx'):
             os.makedirs(directory + '/Output Folder/Pdf to Docx')
 
-        else:
+        else:# If Folder already exists, then Skip/Pass
             pass
-    except Exception as e:
-        print(e)
+    except:
+        pass
 
 # open file dialog using Tkinter GUI
 def selectpdffile(directory): # Select and Copy file to directory
@@ -39,24 +38,9 @@ def selectpdffile(directory): # Select and Copy file to directory
     file_dir = directory
     shutil.copy(file, file_dir) # copy selected file to directory
 
-def pdf2docx(pdf, ending, newdic): 
-    cmd = f"lowriter --convert-to pdf:writer_pdf_Export '{pdf}'" # CMD Command
-    os.system(cmd)
-    new_file = pdf.replace(ending, r".docx")
-
-    if platform =='linux': # For Linux
-        cmdmove = f"mv '{new_file}' '{newdic}'"
-
-    elif platform == 'win32': # For Windows
-        new_file = new_file.replace("/", "\\")
-        cmdmove = f"move '{new_file}' '{newdic}'"
-    
-    os.system(cmdmove)
-    print(new_file)
-
 def remove_pdf(directory): # Remove docx file in directory after conversion
     files_in_directory = os.listdir(directory)
-    filtered_files = [file for file in files_in_directory if file.endswith(".pdf")]
+    filtered_files = [file for file in files_in_directory if file.endswith(".pdf")] # Filter format file (make sure program only remove .pptx files)
 
     for file in filtered_files:
         path_to_file = os.path.join(directory, file)
@@ -70,7 +54,7 @@ def pdftodocx_convert():
     n_files(directory)
 
     docx = client.Dispatch('Word.Application')
-    docx.visible = 0
+    docx.Visible = 0
     print(Fore.BLUE+"Converting PDF to Docx..."+Fore.WHITE)
 
     try:
@@ -86,7 +70,7 @@ def pdftodocx_convert():
                 pdf.SaveAs(output_file, FileFormat=16)
                 pdf.Close()               
 
-    except Exception as e:
+    except Exception as e: # If there is an error during conversion, then show the error to user
         print(e)
         os.system('pause')
         os.system('cls')

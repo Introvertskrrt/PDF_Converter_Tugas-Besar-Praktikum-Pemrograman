@@ -11,8 +11,7 @@ from sys import platform
 
 colorama.init()
 
-# Counts the number of files in the directory that can be converted
-def n_files(directory):
+def n_files(directory): # Count .doc/.docx/.tmd files in the directory
     total = 0
 
     for file in os.listdir(directory):
@@ -20,18 +19,17 @@ def n_files(directory):
             total += 1
     return total
 
-# Creates a new directory within current directory called Docx to PDF
-def createFolder(directory):
+def createFolder(directory): # Create Output Folder
     try:
         if not os.path.exists(directory + 'Output Folder/Docx to PDF'):
             os.makedirs(directory + '/Output Folder/Docx to PDF')
 
-        else:
+        else: # If Folder already exists, then Skip/Pass
             pass
-    except Exception as e:
-        print(e)
+    except:
+        pass
     
-def doc2pdf(doc, ending, newdic):
+def doc2pdf(doc, ending, newdic): # Platfrom Selector
     cmd = f"lowriter --convert-to pdf:writer_pdf_Export '{doc}'" # CMD Command to convert file to PDF
     os.system(cmd)
     new_file = doc.replace(ending, r".pdf")
@@ -64,6 +62,7 @@ def selectdocxFile(directory): # Select and Copy file to directory
 
 def remove_docx(directory): # Remove docx file in directory after conversion
     files_in_directory = os.listdir(directory)
+    # Filter format file (make sure program only remove .docx/.doc/.tmd files)
     filtered_files = [file for file in files_in_directory if file.endswith(".docx") or file.endswith(".doc") or file.endswith(".tmd")]
 
     for file in filtered_files:
@@ -116,7 +115,7 @@ def doctopdf_convert():
                     doc.SaveAs(new_file,FileFormat = 17)
                     doc.Close()
                     
-    except Exception as e:
+    except Exception as e: # If there is an error during conversion, then show the error to user
         print(e)
         os.system('pause')
         os.system('cls')

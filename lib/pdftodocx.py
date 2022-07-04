@@ -26,8 +26,8 @@ def createFolder(directory):
 
         else:
             pass
-    except:
-        pass
+    except Exception as e:
+        print(e)
 
 # open file dialog using Tkinter GUI
 def selectpdffile(directory): # Select and Copy file to directory

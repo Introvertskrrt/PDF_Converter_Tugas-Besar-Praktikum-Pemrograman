@@ -3,9 +3,10 @@ import time
 import colorama
 
 from colorama import Fore
-from lib.doctopdf import *
 from lib.devs import *
+from lib.doctopdf import *
 from lib.pdftodocx import *
+from lib.pptxtopdf import *
 
 colorama.init()
 
@@ -21,12 +22,12 @@ def menu():
 Please close your Office Application before converting!
     """+Fore.WHITE)
     print(Fore.CYAN+"Select Converter:"+Fore.WHITE)
-    print("[1] Docx to PDF\n[2] PDF to Docx\n[3] Credits\n[4] Exit")
+    print("[1] Docx to PDF (Word to Pdf)\n[2] PDF to Docx (Pdf to Word)\n[3] PPTX to PDF (PowerPoint to Pdf)\n[4] PDF to PPTX (Pdf to PowerPoint)\n[5] Credits\n[6] Exit")
 
 # Main Program
 if __name__ == "__main__":
     os.system('cls' if os.name == 'nt' else 'clear') # to prevent "colorama" font color bug
-    while command != 4:
+    while command != 6:
         menu()
         try:
             command = int(input(Fore.GREEN+"\n>> "+Fore.WHITE))
@@ -34,9 +35,16 @@ if __name__ == "__main__":
                 doctopdf_convert()              
 
             elif command == 2:
-                pdftodocx_convert()            
+                pdftodocx_convert()    
 
             elif command == 3:
+                pptxtopdf_convert()
+
+            elif command == 4:
+                print("Fitur Belum Tersedia")
+                time.sleep(2)
+
+            elif command == 4:
                 os.system('cls')
                 devs()
                 print("\n[0] Menu")
@@ -45,7 +53,7 @@ if __name__ == "__main__":
                     os.system('cls')
                     continue
 
-            elif command == 4:
+            elif command == 6: # Exit Program
                 break
 
             else:

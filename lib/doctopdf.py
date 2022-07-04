@@ -28,8 +28,8 @@ def createFolder(directory):
 
         else:
             pass
-    except:
-        pass
+    except Exception as e:
+        print(e)
     
 def doc2pdf(doc, ending, newdic):
     cmd = f"lowriter --convert-to pdf:writer_pdf_Export '{doc}'" # CMD Command to convert file to PDF

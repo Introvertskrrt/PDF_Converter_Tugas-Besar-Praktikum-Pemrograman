@@ -117,6 +117,8 @@ def doctopdf_convert():
                     doc.Close()
     except Exception as e:
         print(e)
+        os.system('pause')
+        os.system('cls')
 
     # Program Finished
     print('\nConversion Finished!')

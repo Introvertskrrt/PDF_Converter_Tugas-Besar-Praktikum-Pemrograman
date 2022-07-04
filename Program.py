@@ -18,7 +18,7 @@ def menu():
 ░█▀█░█▀▄░█▀▀░░░█▀▀░█▀█░█▀█░█░█░█▀▀░█▀▄░▀█▀░█▀▀░█▀▄
 ░█▀▀░█░█░█▀▀░░░█░░░█░█░█░█░▀▄▀░█▀▀░█▀▄░░█░░█▀▀░█▀▄
 ░▀░░░▀▀░░▀░░░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀
-Please close your Word Application before converting!
+Please close your Office Application before converting!
     """+Fore.WHITE)
     print(Fore.CYAN+"Select Converter:"+Fore.WHITE)
     print("[1] Docx to PDF\n[2] PDF to Docx\n[3] Credits\n[4] Exit")

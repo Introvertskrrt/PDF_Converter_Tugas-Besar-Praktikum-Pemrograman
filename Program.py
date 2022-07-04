@@ -41,10 +41,10 @@ if __name__ == "__main__":
                 pptxtopdf_convert()
 
             elif command == 4:
-                print("Fitur Belum Tersedia")
+                print("Fitur Belum Tersedia") # This feature is for Pdf to Pptx
                 time.sleep(2)
 
-            elif command == 4:
+            elif command == 5:
                 os.system('cls')
                 devs()
                 print("\n[0] Menu")

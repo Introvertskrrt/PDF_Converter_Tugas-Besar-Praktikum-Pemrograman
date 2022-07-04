@@ -88,6 +88,8 @@ def pdftodocx_convert():
 
     except Exception as e:
         print(e)
+        os.system('pause')
+        os.system('cls')
 
     # Program Finished
     print(Fore.BLUE+"Conversion Success"+Fore.WHITE)

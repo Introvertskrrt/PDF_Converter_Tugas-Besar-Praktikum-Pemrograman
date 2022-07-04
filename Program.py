@@ -3,7 +3,7 @@ import time
 import colorama
 
 from colorama import Fore
-from lib.docx2pdf import *
+from lib.doctopdf import *
 from lib.devs import *
 from lib.pdftodocx import *
 
@@ -18,6 +18,7 @@ def menu():
 ░█▀█░█▀▄░█▀▀░░░█▀▀░█▀█░█▀█░█░█░█▀▀░█▀▄░▀█▀░█▀▀░█▀▄
 ░█▀▀░█░█░█▀▀░░░█░░░█░█░█░█░▀▄▀░█▀▀░█▀▄░░█░░█▀▀░█▀▄
 ░▀░░░▀▀░░▀░░░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀
+Please close your Word Application before converting!
     """+Fore.WHITE)
     print(Fore.CYAN+"Select Converter:"+Fore.WHITE)
     print("[1] Docx to PDF\n[2] PDF to Docx\n[3] Credits\n[4] Exit")
@@ -30,10 +31,10 @@ if __name__ == "__main__":
         try:
             command = int(input(Fore.GREEN+"\n>> "+Fore.WHITE))
             if command == 1:
-                doctopdf_convert()
+                doctopdf_convert()              
 
             elif command == 2:
-                pdftodocx_convert()
+                pdftodocx_convert()            
 
             elif command == 3:
                 os.system('cls')

@@ -6,7 +6,7 @@ import colorama
 
 from colorama import Fore
 from tkinter import filedialog
-from win32com import client
+from win32com import client # MOST IMPORTANT LIBRARY
 from sys import platform
 
 colorama.init()

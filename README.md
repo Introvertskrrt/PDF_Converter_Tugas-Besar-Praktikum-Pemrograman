@@ -22,6 +22,9 @@
 - subprocess
 - sys
 - pywin32 | win32com
+- aspose
+- img2pdf
+- Pillow | PIL
 
 **To install Library**
 - pip install "library"

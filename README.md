@@ -22,7 +22,6 @@
 - subprocess
 - sys
 - pywin32 | win32com
-- aspose
 - img2pdf
 - Pillow | PIL
 

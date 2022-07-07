@@ -7,6 +7,7 @@ from lib.devs import *
 from lib.doctopdf import *
 from lib.pdftodocx import *
 from lib.pptxtopdf import *
+from lib.pdftopptx import *
 
 colorama.init()
 
@@ -22,7 +23,7 @@ def menu():
 Please close your Office Application before converting!
     """+Fore.WHITE)
     print(Fore.CYAN+"Select Converter:"+Fore.WHITE)
-    print("[1] Docx to PDF (Word to Pdf)\n[2] PDF to Docx (Pdf to Word)\n[3] PPTX to PDF (PowerPoint to Pdf)\n[4] PDF to PPTX (Pdf to PowerPoint)\n[5] Credits\n[6] Exit")
+    print("[1] Docx to PDF (Word to Pdf)\n[2] PDF to Docx (Pdf to Word)\n[3] Ppt to PDF (PowerPoint to PDF)\n[4] PDF to Pptx\n[5] Credits\n[6] Exit")
 
 # Main Program
 if __name__ == "__main__":
@@ -30,7 +31,7 @@ if __name__ == "__main__":
     while command != 6:
         menu()
         try:
-            command = int(input(Fore.GREEN+"\n>> "+Fore.WHITE))
+            command = int(input(Fore.GREEN+"\n>> "+Fore.WHITE)) 
             if command == 1:
                 doctopdf_convert()              
 
@@ -41,8 +42,7 @@ if __name__ == "__main__":
                 pptxtopdf_convert()
 
             elif command == 4:
-                print("Fitur Belum Tersedia") # This feature is for Pdf to Pptx
-                time.sleep(2)
+                pdftopptx_convert()
 
             elif command == 5:
                 os.system('cls')

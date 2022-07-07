@@ -1,0 +1,13 @@
+pip install os
+pip install shutil
+pip install tkinter
+pip install colorama
+pip install time
+pip install subprocess
+pip install sys
+pip install pywin32
+pip install img2pdf
+pip install Pillow
+pip install Collections
+pip install pdf2image
+pip install python-pptx

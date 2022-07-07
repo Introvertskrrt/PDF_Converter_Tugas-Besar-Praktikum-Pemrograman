@@ -26,7 +26,7 @@
 - Pillow
 - Collections
 - pdf2image
-- pptx
+- python-pptx
 
 **To install Library**
 - pip install "library"

@@ -88,7 +88,8 @@ def pdftopptx_convert():
             print("Please wait a moment..."+Fore.WHITE)
             prs = Presentation()
 
-            pages = convert_from_path(directory + '\\' + filename, 500,poppler_path = r"Resources\\Poppler\\bin")
+            poppler_loc = os.path.abspath(r"Resources\\Poppler\\Bin")
+            pages = convert_from_path(directory + '\\' + filename, 500,poppler_path = poppler_loc)
             for index, page in enumerate(pages):
                 #Save as 'jpg' in jpgs dir
                 jpg_file = "cache/Pdf to Pptx/%s-(%d).jpg" % (filename,index)

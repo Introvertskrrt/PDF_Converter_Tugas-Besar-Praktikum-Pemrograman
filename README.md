@@ -39,3 +39,4 @@
 ### ~How to Use
 **CMD**
 - python "Program.py"
+- or simply just run "Run_PDF_Converter.bat"

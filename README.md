@@ -24,6 +24,9 @@
 - pywin32 | win32com
 - img2pdf
 - Pillow | PIL
+- Collections
+- pdf2image
+- pptx
 
 **To install Library**
 - pip install "library"

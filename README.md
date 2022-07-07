@@ -21,9 +21,9 @@
 - time
 - subprocess
 - sys
-- pywin32 | win32com
+- pywin32
 - img2pdf
-- Pillow | PIL
+- Pillow
 - Collections
 - pdf2image
 - pptx

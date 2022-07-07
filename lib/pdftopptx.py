@@ -1,7 +1,6 @@
 import os
 import time
 import shutil
-import datetime
 import collections 
 import collections.abc
 import colorama
@@ -21,7 +20,6 @@ from pdf2image.exceptions import (
     PDFSyntaxError
 )
 colorama.init()
-dt_name = datetime.datetime.now()
 
 def cache_cleaner(directory): # Clear/Remove Cache
     cache_dir = directory + '/cache/Pdf to Pptx'
@@ -80,7 +78,9 @@ def pdftopptx_convert():
     createCacheFolder(directory)
     createFolder(directory)
     selectpdffile(directory)
-    n_files(directory)
+    if n_files(directory) == 0:
+        print("There is no files to convert")
+        
 
     for filename in os.listdir(directory):
         if os.path.splitext(filename)[1] == '.pdf':
@@ -88,7 +88,7 @@ def pdftopptx_convert():
             print("Please wait a moment..."+Fore.WHITE)
             prs = Presentation()
 
-            pages = convert_from_path(directory + '\\' + filename, 500,poppler_path = r"C:\\Program Files (x86)\\Poppler\bin")
+            pages = convert_from_path(directory + '\\' + filename, 500,poppler_path = r"Resources\\Poppler\\bin")
             for index, page in enumerate(pages):
                 #Save as 'jpg' in jpgs dir
                 jpg_file = "cache/Pdf to Pptx/%s-(%d).jpg" % (filename,index)

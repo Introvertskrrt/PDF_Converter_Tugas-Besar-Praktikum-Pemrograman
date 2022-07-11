@@ -25,14 +25,6 @@ def cache_cleaner(directory): # Clear/Remove Cache
     cache_dir = directory + '/cache/Pdf to Pptx'
     shutil.rmtree(cache_dir)
 
-def n_files(directory): # Count .pdf files in the directory
-    total = 0
-
-    for file in os.listdir(directory):
-        if file.endswith('.pdf'):
-            total += 1
-    return total
-
 # open file dialog using Tkinter GUI
 def selectpdffile(directory): # Select and Copy file to directory
     filepath = filedialog.askopenfilename(initialdir="Documents",
@@ -78,9 +70,6 @@ def pdftopptx_convert():
     createCacheFolder(directory)
     createFolder(directory)
     selectpdffile(directory)
-    if n_files(directory) == 0:
-        print("There is no files to convert")
-        
 
     for filename in os.listdir(directory):
         if os.path.splitext(filename)[1] == '.pdf':

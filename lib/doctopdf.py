@@ -11,14 +11,6 @@ from sys import platform
 
 colorama.init()
 
-def n_files(directory): # Count .doc/.docx/.tmd files in the directory
-    total = 0
-
-    for file in os.listdir(directory):
-        if (file.endswith('.doc') or file.endswith('.docx') or file.endswith('.tmd')):
-            total += 1
-    return total
-
 def createFolder(directory): # Create Output Folder
     try:
         if not os.path.exists(directory + 'Output Folder/Docx to PDF'):
@@ -77,10 +69,6 @@ def doctopdf_convert():
     selectdocxFile(directory)
     createFolder(directory)
 	
-    if n_files(directory) == 0:
-        print(Fore.RED+'There are no files to convert'+Fore.WHITE)
-        exit()
-		
     print(Fore.BLUE+'Converting Docx to PDF... \n'+Fore.WHITE)
 
     # Opens each file with Microsoft Word and saves as a PDF

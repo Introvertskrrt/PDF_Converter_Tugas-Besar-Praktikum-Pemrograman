@@ -10,14 +10,6 @@ from win32com import client # MOST IMPORTANT LIBRARY
 
 colorama.init()
 
-def n_files(directory): # Count .pdf files in the directory
-    total = 0
-
-    for file in os.listdir(directory):
-        if (file.endswith('.doc') or file.endswith('.docx') or file.endswith('.tmd')):
-            total += 1
-    return total
-
 def createFolder(directory): # Create Output Folder
     try:
         if not os.path.exists(directory + 'Output Folder/Pdf to Docx'):
@@ -51,7 +43,6 @@ def pdftodocx_convert():
     directory = os.getcwd()
     createFolder(directory)
     selectpdffile(directory)
-    n_files(directory)
 
     docx = client.Dispatch('Word.Application')
     docx.Visible = 0

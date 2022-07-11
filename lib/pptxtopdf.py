@@ -10,14 +10,6 @@ from win32com import client
 
 colorama.init()
 
-def n_files(directory): # Count .pptx files in the directory
-    total = 0
-
-    for file in os.listdir(directory):
-        if file.endswith('.pptx'):
-            total += 1
-    return total
-
 # open file dialog using Tkinter GUI
 def selectpptxfile(directory): # Select and Copy file to directory
     filepath = filedialog.askopenfilename(initialdir="Documents",
@@ -52,7 +44,6 @@ def pptxtopdf_convert():
 
     createFolder(directory)
     selectpptxfile(directory)
-    n_files(directory)
 
     pptx = client.Dispatch('PowerPoint.Application')
     
